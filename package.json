@@ -1,0 +1,37 @@
+{
+  "name": "@botsters/agent-tools",
+  "version": "1.0.0",
+  "description": "CLI tools for Botsters broker: seks-http, seks-git, seks-wrangler, listseks, do-seks",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "seks-http": "dist/src/cli/seks-http.js",
+    "seks-git": "dist/src/cli/seks-git.js",
+    "seks-wrangler": "dist/src/cli/seks-wrangler.js",
+    "listseks": "dist/src/cli/listseks.js",
+    "do-seks": "dist/src/cli/do-seks.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/tests/*.test.js",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "dependencies": {
+    "@botsters/broker-client": "file:../broker-client"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Botsters",
+  "license": "MIT"
+}
