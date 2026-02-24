@@ -54,7 +54,7 @@ async function main() {
   if (!opts.capabilities) {
     const secrets = await client.listSecrets();
     const filtered = opts.provider
-      ? secrets.filter(s => s.provider === opts.provider)
+      ? secrets.filter((s: { provider: string }) => s.provider === opts.provider)
       : secrets;
 
     if (opts.json) {
@@ -82,7 +82,7 @@ async function main() {
     if (opts.provider) {
       output = {
         ...caps,
-        providers: caps.providers.filter(p => p === opts.provider || p.startsWith(`${opts.provider}/`)),
+        providers: caps.providers.filter((p: string) => p === opts.provider || p.startsWith(`${opts.provider}/`)),
       };
     }
 
@@ -108,7 +108,7 @@ async function main() {
   }
 
   if (opts.provider) {
-    const matching = caps.providers.filter(p => p === opts.provider || p.startsWith(`${opts.provider}/`));
+    const matching = caps.providers.filter((p: string) => p === opts.provider || p.startsWith(`${opts.provider}/`));
     if (matching.length === 0) {
       console.log(`No providers matching: ${opts.provider}`);
     } else {

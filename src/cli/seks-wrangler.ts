@@ -113,7 +113,7 @@ async function main() {
     stdio: brokerSecretName ? ['pipe', 'inherit', 'inherit'] : 'inherit',
   });
 
-  if (brokerSecretName) {
+  if (brokerSecretName && child.stdin) {
     child.stdin.write(secretValue ?? '');
     child.stdin.end('\n');
   }
