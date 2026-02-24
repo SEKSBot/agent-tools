@@ -23,7 +23,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@botsters/broker-client": "file:../broker-client"
+    "@botsters/broker-client": "github:BotstersDev/broker-client"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
